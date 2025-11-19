@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://mnnoxlamtqcn"]
 
 [ext_resource type="Script" uid="uid://bjuedwq3wrhqj" path="res://character_body_3d.gd" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://dfhta6ibcvvot" path="res://framework.tscn" id="2_noarx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a202f"]
 
@@ -18,8 +19,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jka67"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_a202f"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -42,9 +41,24 @@ script = ExtResource("1_a202f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00809145, 0.947204, -0.000226021)
 shape = SubResource("CapsuleShape3D_jka67")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899821, 0)
-mesh = SubResource("CapsuleMesh_a202f")
-
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(-0.999942, -0.000455675, -0.0107277, 0.00623165, 0.788991, -0.614373, 0.00874402, -0.614404, -0.788943, 0.193956, 1.09305, 0.158208)
+transform = Transform3D(-0.999962, 0.00872654, -8.74228e-08, 0.00872654, 0.999962, 6.61744e-24, 8.74194e-08, -7.62898e-10, -1, 0.193956, 0.658699, 0.158208)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65705, -0.965926, -1.43422)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 107.0
+offset_top = 428.0
+offset_right = 1366.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 76
+text = "press -E to activate laptop"
