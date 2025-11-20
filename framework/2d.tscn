@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=8 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
+[ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -22,16 +23,20 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb1b"]
+bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="passwordscreen" type="Panel" parent="."]
-offset_left = 156.0
-offset_top = 85.0
-offset_right = 973.0
-offset_bottom = 501.0
+offset_left = 513.0
+offset_top = 299.0
+offset_right = 1330.0
+offset_bottom = 715.0
 theme = SubResource("Theme_40wwj")
 theme_override_styles/panel = SubResource("StyleBoxFlat_y7yf3")
 script = ExtResource("1_y7yf3")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="passwordscreen"]
 layout_mode = 0
@@ -41,8 +46,10 @@ offset_right = 549.0
 offset_bottom = 107.0
 theme_override_font_sizes/font_size = 71
 text = "Your PC"
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="passwordscreen"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 194.0
 offset_right = 565.0
@@ -50,6 +57,7 @@ offset_bottom = 276.0
 scale = Vector2(1.335, 1.335)
 theme = SubResource("Theme_adb1b")
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcvoh")
+metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="passwordscreen"]
 layout_mode = 0
@@ -63,5 +71,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 placeholder_text = "Passwordd:dd"
 flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Windows" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(952, 552)
+scale = Vector2(0.469561, 0.397)
+texture = ExtResource("2_adb1b")
+
+[node name="Panel" type="Panel" parent="Windows"]
+offset_left = -2044.46
+offset_top = 1148.61
+offset_right = 2044.54
+offset_bottom = 1363.61
+theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]

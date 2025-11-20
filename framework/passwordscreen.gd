@@ -1,7 +1,7 @@
 extends Panel
 
 
-
+@onready var homescreen = $"../Windows"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if  new_text == "password":
-		$LineEdit.text = "hurensohn"
+		self.visible = false
+		homescreen.visible = true
 
 	
