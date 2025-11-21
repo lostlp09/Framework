@@ -1,5 +1,5 @@
 extends ScrollContainer
-
+var pressed = false
 @onready var object =preload("res://label.tscn")
 var gamenameandlinks = [{"gamename":"Magicfight","Url":"https://lostlp09.itch.io/magic-parkour"},
 	{"gamename":"gridbuilder","Url":"https://lostlp09.itch.io/gridbuilder"},
@@ -9,8 +9,7 @@ var gamenameandlinks = [{"gamename":"Magicfight","Url":"https://lostlp09.itch.io
 	{"gamename":"coinclickerx","Url":"https://lostlp09.itch.io/coinclickerx"}
 	]
 func _ready() -> void:
-	generatebuttons()
-	pass # Replace with function body.
+	pass
 var gameurl
 func generatebuttons()->void:
 	var startpos = Vector2(-100,156)
@@ -30,3 +29,15 @@ func generatebuttons()->void:
 		clone.text = "            " + i["gamename"]
 func onplaypressed(gameurl)->void:
 	OS.shell_open(gameurl)
+
+
+func _on_texture_button_pressed() -> void:
+	if pressed == false:
+		$".".visible = true
+		generatebuttons()
+		pressed = true
+	else:
+		pressed = false
+		$".".visible = false
+		for i in $VBoxContainer/Panel.get_children():
+			i.queue_free()
