@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=12 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
 [ext_resource type="Texture2D" uid="uid://b7sanr10ob4hx" path="res://Group 3.png" id="4_r8p37"]
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="5_vtxfk"]
 [ext_resource type="Script" uid="uid://ds5w414cnm22u" path="res://button.gd" id="7_r8p37"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
@@ -33,30 +32,8 @@ bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
 bg_color = Color(0.379876, 0.00156107, 0.633608, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf6ih"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8p37"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kegjp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opo4k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b768"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pbvo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnhcu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1o2t"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qutr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrryp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hj5d"]
-bg_color = Color(0.758612, 0.58954, 1, 1)
-
 [node name="Node2D" type="Node2D"]
+position = Vector2(0, -9)
 
 [node name="passwordscreen" type="Panel" parent="."]
 offset_left = 513.0
@@ -111,13 +88,13 @@ texture = ExtResource("2_adb1b")
 [node name="Panel" type="Panel" parent="Windows"]
 anchors_preset = -1
 anchor_left = 0.000112487
-anchor_top = -0.0369075
+anchor_top = -0.0249979
 anchor_right = 0.000112487
-anchor_bottom = -0.000223766
+anchor_bottom = -0.000419813
 offset_left = -2044.46
-offset_top = 1148.61
+offset_top = 1020.14
 offset_right = 2044.54
-offset_bottom = 1363.61
+offset_bottom = 1235.14
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
 metadata/_edit_use_anchors_ = true
 
@@ -137,17 +114,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 760.0
-offset_top = 971.0
+offset_top = 930.0
 offset_right = 1972.0
-offset_bottom = 2183.0
+offset_bottom = 2142.0
 scale = Vector2(0.09, 0.09)
 texture_normal = ExtResource("4_r8p37")
 
 [node name="Gamestore" type="ScrollContainer" parent="."]
-offset_left = 242.0
-offset_top = 97.0
-offset_right = 1760.0
-offset_bottom = 800.0
+offset_left = 205.0
+offset_top = 80.0
+offset_right = 1723.0
+offset_bottom = 783.0
 horizontal_scroll_mode = 0
 script = ExtResource("5_pf6ih")
 
@@ -158,30 +135,5 @@ layout_mode = 2
 custom_minimum_size = Vector2(1510, 1000)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gamestore/VBoxContainer/Panel"]
-position = Vector2(13, -542)
-scale = Vector2(0.414063, 0.398438)
-texture = ExtResource("5_vtxfk")
-
-[node name="Button" type="Button" parent="Gamestore/VBoxContainer/Panel/Sprite2D"]
-offset_left = -256.0
-offset_top = 256.0
-offset_right = 256.0
-offset_bottom = 512.0
-theme_override_font_sizes/font_size = 111
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pf6ih")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_r8p37")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kegjp")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_opo4k")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8b768")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5pbvo")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jnhcu")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_a1o2t")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_7qutr")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_nrryp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0hj5d")
-text = "play"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
