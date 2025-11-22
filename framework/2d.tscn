@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=17 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
 [ext_resource type="Texture2D" uid="uid://df0xwd0mtdc6p" path="res://dadadadadadadad.jpg" id="3_r8p37"]
 [ext_resource type="Texture2D" uid="uid://ctsv4ylqh413t" path="res://Screenshot 2025-11-22 132803.png" id="4_kegjp"]
 [ext_resource type="Texture2D" uid="uid://b7sanr10ob4hx" path="res://Group 3.png" id="4_r8p37"]
+[ext_resource type="Texture2D" uid="uid://cmy4c2nbv7x8c" path="res://Screenshot 2025-11-22 141304.png" id="5_kegjp"]
+[ext_resource type="Texture2D" uid="uid://cnbc7ricftmol" path="res://Screenshot 2025-11-22 141429.png" id="5_opo4k"]
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
 [ext_resource type="Texture2D" uid="uid://8oyu6o1xenen" path="res://Group 4.png" id="5_vtxfk"]
 
@@ -110,6 +112,7 @@ offset_left = 184.0
 offset_top = 201.0
 offset_right = 692.0
 offset_bottom = 785.0
+scroll_vertical = 300
 horizontal_scroll_mode = 0
 script = ExtResource("5_pf6ih")
 
@@ -117,7 +120,7 @@ script = ExtResource("5_pf6ih")
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
-custom_minimum_size = Vector2(500, 2000)
+custom_minimum_size = Vector2(500, 345)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
@@ -138,6 +141,68 @@ offset_right = 1240.19
 offset_bottom = 735.283
 
 [node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+offset_left = 149.0
+offset_top = -90.0
+offset_right = 1292.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "me belike:"
+autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+custom_minimum_size = Vector2(500, 345)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
+
+[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2"]
+position = Vector2(48, 47)
+scale = Vector2(0.223256, 0.229167)
+texture = ExtResource("5_opo4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+position = Vector2(830.302, 366.546)
+scale = Vector2(0.820611, 0.82492)
+texture = ExtResource("4_kegjp")
+
+[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+offset_left = -215.0
+offset_top = 1291.64
+offset_right = 2022.25
+offset_bottom = 1320.3
+
+[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+offset_left = 215.0
+offset_top = -192.0
+offset_right = 1358.0
+offset_bottom = -39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "me belike:"
+autowrap_mode = 2
+
+[node name="Panel3" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+custom_minimum_size = Vector2(500, 345)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
+
+[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3"]
+position = Vector2(40, 40)
+scale = Vector2(0.371, 0.418)
+texture = ExtResource("5_kegjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
+position = Vector2(539.084, 363.636)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_kegjp")
+
+[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
+offset_left = -107.817
+offset_top = 727.273
+offset_right = 1240.19
+offset_bottom = 735.283
+
+[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
 offset_left = 149.0
 offset_top = -90.0
 offset_right = 1292.0
