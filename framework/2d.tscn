@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=28 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -10,9 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://cnbc7ricftmol" path="res://Screenshot 2025-11-22 141429.png" id="5_opo4k"]
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
 [ext_resource type="Texture2D" uid="uid://8oyu6o1xenen" path="res://Group 4.png" id="5_vtxfk"]
+[ext_resource type="Texture2D" uid="uid://b71jqn6ft37ns" path="res://Group 7(2).png" id="6_7qutr"]
 [ext_resource type="Script" uid="uid://diw28miu00vg6" path="res://bunny.gd" id="7_8b768"]
 [ext_resource type="Texture2D" uid="uid://bdp0aoocyfiwv" path="res://Screenshot 2025-11-22 133216.png" id="10_jnhcu"]
 [ext_resource type="Texture2D" uid="uid://cb2suxpq2b7u6" path="res://Screenshot 2025-11-22 132321.png" id="12_a1o2t"]
+[ext_resource type="Script" uid="uid://b4waymqcrv3e2" path="res://boutube.gd" id="15_54skk"]
+[ext_resource type="Texture2D" uid="uid://c7ux1pfsr4qux" path="res://youtubethumbnails/freebobux.png" id="17_pmceo"]
+[ext_resource type="Texture2D" uid="uid://jvvlexd8cqm7" path="res://youtubethumbnails/Screenshot 2025-11-22 182933.png" id="19_f5pn7"]
+[ext_resource type="Texture2D" uid="uid://dlfwme6r1dmrn" path="res://youtubethumbnails/Ein Stern.png" id="20_3wpi8"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -42,6 +47,12 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_43msb"]
+load_path = "res://.godot/imported/hytale.png-57783e753dcbe4f0165efc53d055d250.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piyka"]
+load_path = "res://.godot/imported/topyoutubesong.png-b79f9d6c0b540449a206f00c4549167d.ctex"
 
 [node name="Node2D" type="Node2D"]
 
@@ -105,18 +116,17 @@ anchor_left = 0.000112487
 anchor_top = -0.0249979
 anchor_right = 0.000112487
 anchor_bottom = -0.000419813
-offset_left = -2061.96
-offset_top = 1015.25
-offset_right = 2027.04
-offset_bottom = 1230.25
+offset_left = -2061.46
+offset_top = 1076.14
+offset_right = 2044.54
+offset_bottom = 1291.14
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -242.78
-offset_top = 949.622
+offset_top = 1010.08
 offset_right = 969.22
-offset_bottom = 2956.62
+offset_bottom = 3017.07
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("4_r8p37")
 
@@ -155,11 +165,39 @@ offset_bottom = 1779.53
 theme_override_font_sizes/font_size = 191
 text = "Bunny(sociel Media)"
 
+[node name="TextureButton5" type="TextureButton" parent="linux/Homescreen"]
+offset_left = -1362.98
+offset_top = -1211.59
+offset_right = -150.975
+offset_bottom = 795.411
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("6_7qutr")
+script = ExtResource("5_a1o2t")
+
+[node name="Label" type="Label" parent="linux/Homescreen/TextureButton5"]
+layout_mode = 0
+offset_left = 87.3701
+offset_top = 1286.24
+offset_right = 1941.37
+offset_bottom = 1811.24
+theme_override_font_sizes/font_size = 191
+text = "  Boutube
+"
+
+[node name="TextureButton6" type="TextureButton" parent="linux/Homescreen"]
+offset_left = 136.297
+offset_top = 1005.04
+offset_right = 1348.3
+offset_bottom = 3012.04
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("6_7qutr")
+script = ExtResource("5_a1o2t")
+
 [node name="TextureButton4" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -613.339
-offset_top = 944.584
+offset_top = 1005.04
 offset_right = 598.661
-offset_bottom = 2951.58
+offset_bottom = 3012.03
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("5_vtxfk")
 script = ExtResource("5_a1o2t")
@@ -202,7 +240,6 @@ offset_top = 8.0
 offset_right = 284.0
 offset_bottom = 592.0
 horizontal_scroll_mode = 0
-script = ExtResource("5_pf6ih")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="linux/bunny/bunny(faketwitterbutbad"]
 layout_mode = 2
@@ -295,6 +332,48 @@ offset_left = -224.0
 offset_top = -16.0
 offset_right = 280.0
 offset_bottom = 8.0
+
+[node name="boutube" type="Node2D" parent="linux"]
+position = Vector2(240, 224)
+
+[node name="boutube" type="ScrollContainer" parent="linux/boutube"]
+offset_left = -96.0
+offset_top = -8.0
+offset_right = 1412.0
+offset_bottom = 576.0
+horizontal_scroll_mode = 0
+script = ExtResource("15_54skk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="linux/boutube/boutube"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="linux/boutube/boutube/VBoxContainer"]
+custom_minimum_size = Vector2(1500, 3000)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
+
+[node name="Screenshot2025-11-22182753" type="Sprite2D" parent="."]
+position = Vector2(408, -552)
+scale = Vector2(1.18502, 1.19505)
+texture = SubResource("CompressedTexture2D_43msb")
+
+[node name="Screenshot2025-11-22182825" type="Sprite2D" parent="."]
+position = Vector2(-192, -552)
+texture = ExtResource("17_pmceo")
+
+[node name="Screenshot2025-11-22182858" type="Sprite2D" parent="."]
+position = Vector2(-328, -248)
+scale = Vector2(0.689781, 0.706026)
+texture = SubResource("CompressedTexture2D_piyka")
+
+[node name="Screenshot2025-11-22182933" type="Sprite2D" parent="."]
+position = Vector2(-592, -752)
+scale = Vector2(1.0102, 1.01376)
+texture = ExtResource("19_f5pn7")
+
+[node name="Screenshot2025-11-22182520" type="Sprite2D" parent="."]
+position = Vector2(-192, -544)
+texture = ExtResource("20_3wpi8")
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="linux/Homescreen/TextureButton" to="linux/Node2D2/Gamestore" method="_on_texture_button_pressed"]
