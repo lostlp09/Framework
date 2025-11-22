@@ -1,5 +1,6 @@
 extends ScrollContainer
 var pressed = false
+@export var function:Callable
 @onready var object =preload("res://label.tscn")
 var gamenameandlinks = [{"gamename":"Magicfight","Url":"https://lostlp09.itch.io/magic-parkour"},
 	{"gamename":"gridbuilder","Url":"https://lostlp09.itch.io/gridbuilder"},
@@ -9,12 +10,15 @@ var gamenameandlinks = [{"gamename":"Magicfight","Url":"https://lostlp09.itch.io
 	{"gamename":"coinclickerx","Url":"https://lostlp09.itch.io/coinclickerx"}
 	]
 func _ready() -> void:
+
+	function = generatebuttons
 	pass
 var gameurl
 func generatebuttons()->void:
 	var startpos = Vector2(-100,156)
 	var anzahl = 1
 	for i in gamenameandlinks:
+		print("yo")
 		
 		var clone:Label= object.instantiate()
 		if anzahl == 5:
@@ -34,7 +38,7 @@ func onplaypressed(gameurl)->void:
 func _on_texture_button_pressed() -> void:
 	if pressed == false:
 		$".".visible = true
-		generatebuttons()
+		function.call()
 		pressed = true
 	else:
 		pressed = false

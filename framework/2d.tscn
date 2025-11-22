@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=15 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
+[ext_resource type="Texture2D" uid="uid://df0xwd0mtdc6p" path="res://dadadadadadadad.jpg" id="3_r8p37"]
+[ext_resource type="Texture2D" uid="uid://ctsv4ylqh413t" path="res://Screenshot 2025-11-22 132803.png" id="4_kegjp"]
 [ext_resource type="Texture2D" uid="uid://b7sanr10ob4hx" path="res://Group 3.png" id="4_r8p37"]
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
-[ext_resource type="Script" uid="uid://ds5w414cnm22u" path="res://button.gd" id="7_r8p37"]
+[ext_resource type="Texture2D" uid="uid://8oyu6o1xenen" path="res://Group 4.png" id="5_vtxfk"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -26,8 +28,11 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8p37"]
+bg_color = Color(1, 0, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
-bg_color = Color(0.379876, 0.00156107, 0.633608, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb1b"]
 bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
@@ -36,6 +41,7 @@ bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
 position = Vector2(0, -9)
 
 [node name="passwordscreen" type="Panel" parent="."]
+visible = false
 offset_left = 513.0
 offset_top = 299.0
 offset_right = 1330.0
@@ -97,16 +103,57 @@ layout_mode = 2
 [node name="Panel" type="Panel" parent="Node2D/Gamestore/VBoxContainer"]
 custom_minimum_size = Vector2(1510, 1000)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r8p37")
+
+[node name="bunny(faketwitterbutbad" type="ScrollContainer" parent="Node2D"]
+offset_left = 184.0
+offset_top = 201.0
+offset_right = 692.0
+offset_bottom = 785.0
+horizontal_scroll_mode = 0
+script = ExtResource("5_pf6ih")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/bunny(faketwitterbutbad"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+custom_minimum_size = Vector2(500, 2000)
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
-[node name="Windows" type="Sprite2D" parent="Node2D"]
-visible = false
+[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel"]
+position = Vector2(40, 40)
+scale = Vector2(0.371, 0.418)
+texture = ExtResource("3_r8p37")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+position = Vector2(539.084, 363.636)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_kegjp")
+
+[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+offset_left = -107.817
+offset_top = 727.273
+offset_right = 1240.19
+offset_bottom = 735.283
+
+[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+offset_left = 149.0
+offset_top = -90.0
+offset_right = 1292.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "me belike:"
+autowrap_mode = 2
+
+[node name="Homescreen" type="Sprite2D" parent="Node2D"]
 z_index = -1
-position = Vector2(952, 552)
+position = Vector2(952, 537)
 scale = Vector2(0.469561, 0.397)
 texture = ExtResource("2_adb1b")
 
-[node name="Panel" type="Panel" parent="Node2D/Windows"]
+[node name="Panel" type="Panel" parent="Node2D/Homescreen"]
 anchors_preset = -1
 anchor_left = 0.000112487
 anchor_top = -0.0249979
@@ -119,27 +166,35 @@ offset_bottom = 1235.14
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="Node2D/Windows"]
-anchors_preset = -1
-anchor_left = -1.95838e-05
-anchor_top = -0.0998734
-anchor_right = 0.0843531
-anchor_bottom = -9.35454e-05
-offset_left = -2014.57
-offset_top = 944.799
-offset_right = -1814.57
-offset_bottom = 975.799
-text = "cool dowwwwwwwnload"
-script = ExtResource("7_r8p37")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureButton" type="TextureButton" parent="Node2D/Windows"]
-offset_left = -249.169
-offset_top = 957.179
-offset_right = 962.831
-offset_bottom = 2169.18
-scale = Vector2(0.09, 0.09)
+[node name="TextureButton" type="TextureButton" parent="Node2D/Homescreen"]
+offset_left = -242.78
+offset_top = 949.622
+offset_right = 969.22
+offset_bottom = 2956.62
+scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("4_r8p37")
 
+[node name="TextureButton2" type="TextureButton" parent="Node2D/Homescreen"]
+offset_left = -2010.39
+offset_top = -1206.55
+offset_right = -798.385
+offset_bottom = 800.448
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("4_r8p37")
+
+[node name="TextureButton3" type="TextureButton" parent="Node2D/Homescreen"]
+offset_left = -1680.29
+offset_top = -1206.55
+offset_right = -468.29
+offset_bottom = 800.448
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("5_vtxfk")
+
+[node name="Dadadadadadadad" type="Sprite2D" parent="."]
+position = Vector2(-171.25, 528.5)
+scale = Vector2(0.176606, 0.183333)
+texture = ExtResource("3_r8p37")
+
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="Node2D/Windows/TextureButton" to="Node2D/Gamestore" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Node2D/Homescreen/TextureButton" to="Node2D/Gamestore" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Node2D/Homescreen/TextureButton2" to="Node2D/Gamestore" method="_on_texture_button_pressed"]

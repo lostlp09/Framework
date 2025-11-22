@@ -17,7 +17,6 @@ func _input(event: InputEvent) -> void:
 		self.rotation.y -= event.relative.x * 0.001
 
 func _physics_process(delta: float) -> void:
-
 	var distance = self.position.distance_to(leptop.position)
 	if  distance <= 3:
 		if Input.is_action_just_pressed("interact"):
