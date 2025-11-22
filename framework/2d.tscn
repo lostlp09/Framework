@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=18 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cnbc7ricftmol" path="res://Screenshot 2025-11-22 141429.png" id="5_opo4k"]
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
 [ext_resource type="Texture2D" uid="uid://8oyu6o1xenen" path="res://Group 4.png" id="5_vtxfk"]
+[ext_resource type="Script" uid="uid://diw28miu00vg6" path="res://bunny.gd" id="7_8b768"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -30,17 +31,16 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 corner_detail = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb1b"]
+bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8p37"]
 bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adb1b"]
-bg_color = Color(0.0119956, 0.0203887, 0.0698799, 0.945098)
-
 [node name="Node2D" type="Node2D"]
-position = Vector2(0, -9)
 
 [node name="passwordscreen" type="Panel" parent="."]
 visible = false
@@ -88,59 +88,138 @@ placeholder_text = "Passwordd:dd"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="gmestore" type="Node2D" parent="."]
 
-[node name="Gamestore" type="ScrollContainer" parent="Node2D"]
+[node name="Homescreen" type="Sprite2D" parent="gmestore"]
+z_index = -1
+position = Vector2(952, 537)
+scale = Vector2(0.469561, 0.397)
+texture = ExtResource("2_adb1b")
+
+[node name="Panel" type="Panel" parent="gmestore/Homescreen"]
+anchors_preset = -1
+anchor_left = 0.000112487
+anchor_top = -0.0249979
+anchor_right = 0.000112487
+anchor_bottom = -0.000419813
+offset_left = -2061.96
+offset_top = 1015.25
+offset_right = 2027.04
+offset_bottom = 1230.25
+theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="gmestore/Homescreen"]
+offset_left = -242.78
+offset_top = 949.622
+offset_right = 969.22
+offset_bottom = 2956.62
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("4_r8p37")
+
+[node name="TextureButton2" type="TextureButton" parent="gmestore/Homescreen"]
+offset_left = -2010.39
+offset_top = -1206.55
+offset_right = -798.385
+offset_bottom = 800.448
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("4_r8p37")
+
+[node name="Label2" type="Label" parent="gmestore/Homescreen/TextureButton2"]
+layout_mode = 0
+offset_left = 87.3795
+offset_top = 1275.53
+offset_right = 1941.38
+offset_bottom = 1779.53
+theme_override_font_sizes/font_size = 191
+text = "Game Store"
+
+[node name="TextureButton3" type="TextureButton" parent="gmestore/Homescreen"]
+offset_left = -1680.29
+offset_top = -1206.55
+offset_right = -468.29
+offset_bottom = 800.448
+scale = Vector2(0.195, 0.235)
+texture_normal = ExtResource("5_vtxfk")
+
+[node name="Label" type="Label" parent="gmestore/Homescreen/TextureButton3"]
+layout_mode = 0
+offset_left = -207.518
+offset_top = 1275.53
+offset_right = 1646.48
+offset_bottom = 1779.53
+theme_override_font_sizes/font_size = 191
+text = "Bunny(sociel Media)"
+
+[node name="Node2D2" type="Node2D" parent="gmestore"]
 visible = false
-offset_left = 184.0
-offset_top = 118.0
-offset_right = 1702.0
-offset_bottom = 821.0
+position = Vector2(920, 200)
+script = ExtResource("7_8b768")
+
+[node name="Gamestore" type="ScrollContainer" parent="gmestore/Node2D2"]
+offset_left = -768.0
+offset_top = -24.0
+offset_right = 750.0
+offset_bottom = 679.0
 horizontal_scroll_mode = 0
 script = ExtResource("5_pf6ih")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/Gamestore"]
+[node name="VBoxContainer" type="VBoxContainer" parent="gmestore/Node2D2/Gamestore"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Node2D/Gamestore/VBoxContainer"]
+[node name="Panel" type="Panel" parent="gmestore/Node2D2/Gamestore/VBoxContainer"]
 custom_minimum_size = Vector2(1510, 1000)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r8p37")
 
-[node name="bunny(faketwitterbutbad" type="ScrollContainer" parent="Node2D"]
-offset_left = 184.0
-offset_top = 201.0
-offset_right = 692.0
-offset_bottom = 785.0
-scroll_vertical = 300
+[node name="Button" type="Button" parent="gmestore/Node2D2"]
+offset_left = -768.0
+offset_top = -24.0
+offset_right = 744.0
+offset_bottom = 16.0
+
+[node name="Dadadadadadadad" type="Sprite2D" parent="."]
+position = Vector2(-171.25, 528.5)
+scale = Vector2(0.176606, 0.183333)
+texture = ExtResource("3_r8p37")
+
+[node name="bunny" type="Node2D" parent="."]
+position = Vector2(880, 504)
+script = ExtResource("7_8b768")
+
+[node name="bunny(faketwitterbutbad" type="ScrollContainer" parent="bunny"]
+offset_left = -216.0
+offset_top = -8.0
+offset_right = 292.0
+offset_bottom = 576.0
 horizontal_scroll_mode = 0
 script = ExtResource("5_pf6ih")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/bunny(faketwitterbutbad"]
+[node name="VBoxContainer" type="VBoxContainer" parent="bunny/bunny(faketwitterbutbad"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+[node name="Panel" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer"]
 custom_minimum_size = Vector2(500, 345)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
-[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel"]
+[node name="Userprofile" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel"]
 position = Vector2(40, 40)
 scale = Vector2(0.371, 0.418)
 texture = ExtResource("3_r8p37")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+[node name="Sprite2D" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
 position = Vector2(539.084, 363.636)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_kegjp")
 
-[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+[node name="Panel2" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
 offset_left = -107.817
 offset_top = 727.273
 offset_right = 1240.19
 offset_bottom = 735.283
 
-[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
+[node name="Label2" type="Label" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel/Userprofile"]
 offset_left = 149.0
 offset_top = -90.0
 offset_right = 1292.0
@@ -150,28 +229,28 @@ theme_override_font_sizes/font_size = 56
 text = "me belike:"
 autowrap_mode = 2
 
-[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+[node name="Panel2" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer"]
 custom_minimum_size = Vector2(500, 345)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
-[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2"]
+[node name="Userprofile" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel2"]
 position = Vector2(48, 47)
 scale = Vector2(0.223256, 0.229167)
 texture = ExtResource("5_opo4k")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+[node name="Sprite2D" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
 position = Vector2(830.302, 366.546)
 scale = Vector2(0.820611, 0.82492)
 texture = ExtResource("4_kegjp")
 
-[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+[node name="Panel2" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
 offset_left = -215.0
 offset_top = 1291.64
 offset_right = 2022.25
 offset_bottom = 1320.3
 
-[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
+[node name="Label2" type="Label" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel2/Userprofile"]
 offset_left = 215.0
 offset_top = -192.0
 offset_right = 1358.0
@@ -181,28 +260,28 @@ theme_override_font_sizes/font_size = 96
 text = "me belike:"
 autowrap_mode = 2
 
-[node name="Panel3" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer"]
+[node name="Panel3" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer"]
 custom_minimum_size = Vector2(500, 345)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
-[node name="Userprofile" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3"]
+[node name="Userprofile" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel3"]
 position = Vector2(40, 40)
 scale = Vector2(0.371, 0.418)
 texture = ExtResource("5_kegjp")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
+[node name="Sprite2D" type="Sprite2D" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
 position = Vector2(539.084, 363.636)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_kegjp")
 
-[node name="Panel2" type="Panel" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
+[node name="Panel2" type="Panel" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
 offset_left = -107.817
 offset_top = 727.273
 offset_right = 1240.19
 offset_bottom = 735.283
 
-[node name="Label2" type="Label" parent="Node2D/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
+[node name="Label2" type="Label" parent="bunny/bunny(faketwitterbutbad/VBoxContainer/Panel3/Userprofile"]
 offset_left = 149.0
 offset_top = -90.0
 offset_right = 1292.0
@@ -212,54 +291,16 @@ theme_override_font_sizes/font_size = 56
 text = "me belike:"
 autowrap_mode = 2
 
-[node name="Homescreen" type="Sprite2D" parent="Node2D"]
-z_index = -1
-position = Vector2(952, 537)
-scale = Vector2(0.469561, 0.397)
-texture = ExtResource("2_adb1b")
-
-[node name="Panel" type="Panel" parent="Node2D/Homescreen"]
-anchors_preset = -1
-anchor_left = 0.000112487
-anchor_top = -0.0249979
-anchor_right = 0.000112487
-anchor_bottom = -0.000419813
-offset_left = -2044.46
-offset_top = 1020.14
-offset_right = 2044.54
-offset_bottom = 1235.14
-theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureButton" type="TextureButton" parent="Node2D/Homescreen"]
-offset_left = -242.78
-offset_top = 949.622
-offset_right = 969.22
-offset_bottom = 2956.62
-scale = Vector2(0.195, 0.235)
-texture_normal = ExtResource("4_r8p37")
-
-[node name="TextureButton2" type="TextureButton" parent="Node2D/Homescreen"]
-offset_left = -2010.39
-offset_top = -1206.55
-offset_right = -798.385
-offset_bottom = 800.448
-scale = Vector2(0.195, 0.235)
-texture_normal = ExtResource("4_r8p37")
-
-[node name="TextureButton3" type="TextureButton" parent="Node2D/Homescreen"]
-offset_left = -1680.29
-offset_top = -1206.55
-offset_right = -468.29
-offset_bottom = 800.448
-scale = Vector2(0.195, 0.235)
-texture_normal = ExtResource("5_vtxfk")
-
-[node name="Dadadadadadadad" type="Sprite2D" parent="."]
-position = Vector2(-171.25, 528.5)
-scale = Vector2(0.176606, 0.183333)
-texture = ExtResource("3_r8p37")
+[node name="Button" type="Button" parent="bunny"]
+offset_left = -216.0
+offset_top = -24.0
+offset_right = 288.0
+offset_bottom = 16.0
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
-[connection signal="pressed" from="Node2D/Homescreen/TextureButton" to="Node2D/Gamestore" method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Node2D/Homescreen/TextureButton2" to="Node2D/Gamestore" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="gmestore/Homescreen/TextureButton" to="gmestore/Node2D2/Gamestore" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="gmestore/Homescreen/TextureButton2" to="gmestore/Node2D2/Gamestore" method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="gmestore/Node2D2/Button" to="bunny" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="gmestore/Node2D2/Button" to="bunny" method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="bunny/Button" to="bunny" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="bunny/Button" to="bunny" method="_on_button_mouse_exited"]

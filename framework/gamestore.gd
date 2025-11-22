@@ -37,11 +37,11 @@ func onplaypressed(gameurl)->void:
 
 func _on_texture_button_pressed() -> void:
 	if pressed == false:
-		$".".visible = true
+		$".".get_parent().visible = true
 		function.call()
 		pressed = true
 	else:
 		pressed = false
-		$".".visible = false
+		$".".get_parent().visible = false
 		for i in $VBoxContainer/Panel.get_children():
 			i.queue_free()
