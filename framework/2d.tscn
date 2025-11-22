@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=29 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dl1m6gtnwqcbr" path="res://gamestore.gd" id="5_pf6ih"]
 [ext_resource type="Texture2D" uid="uid://8oyu6o1xenen" path="res://Group 4.png" id="5_vtxfk"]
 [ext_resource type="Texture2D" uid="uid://b71jqn6ft37ns" path="res://Group 7(2).png" id="6_7qutr"]
+[ext_resource type="Script" uid="uid://dinbbfqwyn50q" path="res://ytbutton.gd" id="7_0cq2i"]
 [ext_resource type="Script" uid="uid://diw28miu00vg6" path="res://bunny.gd" id="7_8b768"]
 [ext_resource type="Texture2D" uid="uid://bdp0aoocyfiwv" path="res://Screenshot 2025-11-22 133216.png" id="10_jnhcu"]
 [ext_resource type="Texture2D" uid="uid://cb2suxpq2b7u6" path="res://Screenshot 2025-11-22 132321.png" id="12_a1o2t"]
@@ -172,7 +173,7 @@ offset_right = -150.975
 offset_bottom = 795.411
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("6_7qutr")
-script = ExtResource("5_a1o2t")
+script = ExtResource("7_0cq2i")
 
 [node name="Label" type="Label" parent="linux/Homescreen/TextureButton5"]
 layout_mode = 0
@@ -185,13 +186,23 @@ text = "  Boutube
 "
 
 [node name="TextureButton6" type="TextureButton" parent="linux/Homescreen"]
-offset_left = 136.297
+offset_left = 102.223
 offset_top = 1005.04
-offset_right = 1348.3
+offset_right = 1314.23
 offset_bottom = 3012.04
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("6_7qutr")
-script = ExtResource("5_a1o2t")
+script = ExtResource("7_0cq2i")
+
+[node name="Label" type="Label" parent="linux/Homescreen/TextureButton6"]
+layout_mode = 0
+offset_left = 87.3701
+offset_top = 1286.24
+offset_right = 1941.37
+offset_bottom = 1811.24
+theme_override_font_sizes/font_size = 191
+text = "  Boutube
+"
 
 [node name="TextureButton4" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -613.339
@@ -334,13 +345,15 @@ offset_right = 280.0
 offset_bottom = 8.0
 
 [node name="boutube" type="Node2D" parent="linux"]
-position = Vector2(240, 224)
+visible = false
+position = Vector2(760, 240)
+script = ExtResource("7_8b768")
 
 [node name="boutube" type="ScrollContainer" parent="linux/boutube"]
-offset_left = -96.0
-offset_top = -8.0
-offset_right = 1412.0
-offset_bottom = 576.0
+offset_left = -568.0
+offset_top = 8.0
+offset_right = 940.0
+offset_bottom = 592.0
 horizontal_scroll_mode = 0
 script = ExtResource("15_54skk")
 
@@ -351,6 +364,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(1500, 3000)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
+
+[node name="Button" type="Button" parent="linux/boutube"]
+offset_left = -568.0
+offset_top = -16.0
+offset_right = 936.0
+offset_bottom = 8.0
 
 [node name="Screenshot2025-11-22182753" type="Sprite2D" parent="."]
 position = Vector2(408, -552)
