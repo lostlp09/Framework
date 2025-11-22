@@ -18,7 +18,7 @@ Hytale Gameplay omg !!!
 Ein Stern
 ","Url":"https://www.youtube.com/watch?v=2Ua9af7xC9c","image":preload("res://youtubethumbnails/Ein Stern.png")},
 {"gamename":"
-This is Why I Bought use Framework Laptop
+This is Why I Bought a Framework Laptop
 ","Url":"https://www.youtube.com/watch?v=mAYKlKyv6tI&t=485s","image":preload("res://youtubethumbnails/Screenshot 2025-11-22 182933.png")},
   	]
 func _ready() -> void:

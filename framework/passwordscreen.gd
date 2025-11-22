@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var homescreen = $"../Node2D/Windows"
+@onready var homescreen =$"../linux"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:

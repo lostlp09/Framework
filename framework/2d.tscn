@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=24 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bdp0aoocyfiwv" path="res://Screenshot 2025-11-22 133216.png" id="10_jnhcu"]
 [ext_resource type="Texture2D" uid="uid://cb2suxpq2b7u6" path="res://Screenshot 2025-11-22 132321.png" id="12_a1o2t"]
 [ext_resource type="Script" uid="uid://b4waymqcrv3e2" path="res://boutube.gd" id="15_54skk"]
-[ext_resource type="Texture2D" uid="uid://c7ux1pfsr4qux" path="res://youtubethumbnails/freebobux.png" id="17_pmceo"]
-[ext_resource type="Texture2D" uid="uid://jvvlexd8cqm7" path="res://youtubethumbnails/Screenshot 2025-11-22 182933.png" id="19_f5pn7"]
-[ext_resource type="Texture2D" uid="uid://dlfwme6r1dmrn" path="res://youtubethumbnails/Ein Stern.png" id="20_3wpi8"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -49,16 +46,9 @@ bg_color = Color(1, 0, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_43msb"]
-load_path = "res://.godot/imported/hytale.png-57783e753dcbe4f0165efc53d055d250.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_piyka"]
-load_path = "res://.godot/imported/topyoutubesong.png-b79f9d6c0b540449a206f00c4549167d.ctex"
-
 [node name="Node2D" type="Node2D"]
 
 [node name="passwordscreen" type="Panel" parent="."]
-visible = false
 offset_left = 513.0
 offset_top = 299.0
 offset_right = 1330.0
@@ -104,6 +94,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="linux" type="Node2D" parent="."]
+visible = false
 
 [node name="Homescreen" type="Sprite2D" parent="linux"]
 z_index = -1
@@ -370,29 +361,6 @@ offset_left = -568.0
 offset_top = -16.0
 offset_right = 936.0
 offset_bottom = 8.0
-
-[node name="Screenshot2025-11-22182753" type="Sprite2D" parent="."]
-position = Vector2(408, -552)
-scale = Vector2(1.18502, 1.19505)
-texture = SubResource("CompressedTexture2D_43msb")
-
-[node name="Screenshot2025-11-22182825" type="Sprite2D" parent="."]
-position = Vector2(-192, -552)
-texture = ExtResource("17_pmceo")
-
-[node name="Screenshot2025-11-22182858" type="Sprite2D" parent="."]
-position = Vector2(-328, -248)
-scale = Vector2(0.689781, 0.706026)
-texture = SubResource("CompressedTexture2D_piyka")
-
-[node name="Screenshot2025-11-22182933" type="Sprite2D" parent="."]
-position = Vector2(-592, -752)
-scale = Vector2(1.0102, 1.01376)
-texture = ExtResource("19_f5pn7")
-
-[node name="Screenshot2025-11-22182520" type="Sprite2D" parent="."]
-position = Vector2(-192, -544)
-texture = ExtResource("20_3wpi8")
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="linux/Homescreen/TextureButton" to="linux/Node2D2/Gamestore" method="_on_texture_button_pressed"]
