@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mnnoxlamtqcn"]
+[gd_scene load_steps=15 format=3 uid="uid://mnnoxlamtqcn"]
 
 [ext_resource type="Script" uid="uid://bjuedwq3wrhqj" path="res://character_body_3d.gd" id="1_a202f"]
 [ext_resource type="Texture2D" uid="uid://cih734l70duin" path="res://youtubethumbnails/760d5fe5765d25d6ac380e6c8a0c8107.jpg" id="1_r3fl7"]
@@ -32,6 +32,14 @@ height = 4.49901
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_r3fl7"]
+material = SubResource("StandardMaterial3D_i5arm")
+text = "PASSWORD is Password
+"
 
 [node name="Node3D" type="Node3D"]
 
@@ -95,3 +103,7 @@ mesh = SubResource("PlaneMesh_i5arm")
 transform = Transform3D(2.5369, 0.0753332, -0.600603, -0.191773, 0.969386, 0.484879, 0.140819, -0.0370012, 11.4804, 0.468729, 0.726417, -9.32255)
 material_override = SubResource("StandardMaterial3D_r3fl7")
 mesh = SubResource("PlaneMesh_i5arm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0182153, 0, -1.00769, 0, 2.09888, 0, 1.73936, 0, 0.0105529, 3.15456, 5.6192, 5.98697)
+mesh = SubResource("TextMesh_r3fl7")

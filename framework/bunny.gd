@@ -6,7 +6,7 @@ func _ready() -> void:
 # Called when the node enters the scene tree for the first time.
 var mouseentered = false
 func _process(delta: float) -> void:
-	print(self)
+
 	if Input.is_action_pressed("mausgedrückt") and mouseentered == true :
 		self.position =  get_global_mouse_position() 
 

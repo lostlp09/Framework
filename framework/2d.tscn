@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=26 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bdp0aoocyfiwv" path="res://Screenshot 2025-11-22 133216.png" id="10_jnhcu"]
 [ext_resource type="Texture2D" uid="uid://cb2suxpq2b7u6" path="res://Screenshot 2025-11-22 132321.png" id="12_a1o2t"]
 [ext_resource type="Script" uid="uid://b4waymqcrv3e2" path="res://boutube.gd" id="15_54skk"]
+[ext_resource type="Script" uid="uid://d2dj1g6vh64tq" path="res://timeuntil.gd" id="17_43msb"]
+[ext_resource type="Script" uid="uid://dlfpsxtwjkphv" path="res://label.gd" id="17_pcxfa"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -49,6 +51,7 @@ bg_color = Color(1, 1, 1, 1)
 [node name="Node2D" type="Node2D"]
 
 [node name="passwordscreen" type="Panel" parent="."]
+visible = false
 offset_left = 513.0
 offset_top = 299.0
 offset_right = 1330.0
@@ -80,7 +83,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vcvoh")
 metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="passwordscreen"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0134639
+anchor_top = 0.00721154
+anchor_right = 0.0477356
+anchor_bottom = 0.00721154
 offset_left = 234.0
 offset_top = 202.0
 offset_right = 502.0
@@ -88,13 +96,12 @@ offset_bottom = 267.0
 scale = Vector2(1.335, 1.335)
 focus_mode = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
-placeholder_text = "Passwordd:dd"
+theme_override_font_sizes/font_size = 26
+placeholder_text = "enter your password"
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="linux" type="Node2D" parent="."]
-visible = false
 
 [node name="Homescreen" type="Sprite2D" parent="linux"]
 z_index = -1
@@ -361,6 +368,33 @@ offset_left = -568.0
 offset_top = -16.0
 offset_right = 936.0
 offset_bottom = 8.0
+
+[node name="countdown" type="Panel" parent="linux"]
+offset_left = 1504.0
+offset_right = 1920.0
+offset_bottom = 216.0
+
+[node name="Label" type="Label" parent="linux/countdown"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 392.0
+offset_bottom = 179.0
+text = "Time remaing until Siege is over
+
+
+
+
+
+00:00:00"
+horizontal_alignment = 1
+script = ExtResource("17_43msb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1744.0
+offset_top = 1008.0
+offset_right = 1912.0
+offset_bottom = 1048.0
+script = ExtResource("17_pcxfa")
 
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="linux/Homescreen/TextureButton" to="linux/Node2D2/Gamestore" method="_on_texture_button_pressed"]

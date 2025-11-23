@@ -18,7 +18,7 @@ func generatebuttons()->void:
 	var startpos = Vector2(-100,156)
 	var anzahl = 1
 	for i in gamenameandlinks:
-		print("yo")
+
 		
 		var clone:Label= object.instantiate()
 		if anzahl == 5:
@@ -28,7 +28,6 @@ func generatebuttons()->void:
 		clone.position = Vector2(startpos.x +(anzahl *300),startpos.y)
 		$VBoxContainer/Panel.add_child(clone)
 		anzahl +=1
-		print(clone.position)
 		clone.get_node("Button").pressed.connect(onplaypressed.bind(i["Url"]))
 		clone.text = "            " + i["gamename"]
 func onplaypressed(gameurl)->void:
