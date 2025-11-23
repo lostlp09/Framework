@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://mnnoxlamtqcn"]
+[gd_scene load_steps=13 format=3 uid="uid://mnnoxlamtqcn"]
 
 [ext_resource type="Script" uid="uid://bjuedwq3wrhqj" path="res://character_body_3d.gd" id="1_a202f"]
+[ext_resource type="Texture2D" uid="uid://cih734l70duin" path="res://youtubethumbnails/760d5fe5765d25d6ac380e6c8a0c8107.jpg" id="1_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://dfhta6ibcvvot" path="res://framework.tscn" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://bc6rele1pcme4" path="res://room.tscn" id="3_a0tk4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+uv2_padding = 1.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
+albedo_texture = ExtResource("1_r3fl7")
+uv1_scale = Vector3(3.04, 7.955, -1.165)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -22,10 +28,21 @@ glow_enabled = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jka67"]
 height = 4.49901
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i5arm"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(-33.115, 0, 2.77834e-06, 0, 1, 0, -2.895e-06, 0, -31.7805, 0, -1.46593, 0)
+transform = Transform3D(-33.115, 0, 2.77834e-06, 0, 1, 0, -2.895e-06, 0, -31.7805, 0, 10.8805, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_a202f")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-0.167539, 0, -2.00973, 0, 10.6251, 0, 0.106669, 0, -3.15659, 2.8361, 2.84381, 1.82889)
+material_override = SubResource("StandardMaterial3D_jka67")
 use_collision = true
 mesh = SubResource("BoxMesh_a202f")
 
@@ -68,3 +85,13 @@ text = "press -E to activate laptop"
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_a0tk4")]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -3.98081, 0.730556, 7.57475)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.54803, 0, 0, 0, 0.00764192, -11.506, 0, 0.972982, 0.0903695, 0.81998, 0.305404, 0.369113)
+material_override = SubResource("StandardMaterial3D_r3fl7")
+mesh = SubResource("PlaneMesh_i5arm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5369, 0.0753332, -0.600603, -0.191773, 0.969386, 0.484879, 0.140819, -0.0370012, 11.4804, 0.468729, 0.726417, -9.32255)
+material_override = SubResource("StandardMaterial3D_r3fl7")
+mesh = SubResource("PlaneMesh_i5arm")
