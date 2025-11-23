@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://mnnoxlamtqcn"]
+[gd_scene load_steps=9 format=3 uid="uid://mnnoxlamtqcn"]
 
 [ext_resource type="Script" uid="uid://bjuedwq3wrhqj" path="res://character_body_3d.gd" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://dfhta6ibcvvot" path="res://framework.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://bc6rele1pcme4" path="res://room.tscn" id="3_a0tk4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a202f"]
 
@@ -19,6 +20,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jka67"]
+height = 4.49901
 
 [node name="Node3D" type="Node3D"]
 
@@ -35,6 +37,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82965, 2.76751, 8.50745)
 script = ExtResource("1_a202f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -42,10 +45,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00809145, 0.947204, -0.000
 shape = SubResource("CapsuleShape3D_jka67")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(-0.999962, 0.00872654, -8.74228e-08, 0.00872654, 0.999962, 6.61744e-24, 8.74194e-08, -7.62898e-10, -1, 0.193956, 0.658699, 0.158208)
+transform = Transform3D(-0.999962, 0.00872654, -8.74227e-08, 0.00872654, 0.999962, -1.20477e-16, 8.74194e-08, -7.62898e-10, -1, -0.235029, 2.39324, -0.12684)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65705, -0.965926, -1.43422)
+transform = Transform3D(0.14743, -0.00162223, -0.989071, -0.00156058, 0.999997, -0.00187277, 0.989071, 0.00181963, 0.147427, 1.85005, 3.34666, 11.6312)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -62,3 +65,6 @@ offset_right = 1366.0
 offset_bottom = 566.0
 theme_override_font_sizes/font_size = 76
 text = "press -E to activate laptop"
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_a0tk4")]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -3.98081, 0.730556, 7.57475)
