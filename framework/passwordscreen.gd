@@ -18,3 +18,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		homescreen.visible = true
 
 	
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://node_3d.tscn")

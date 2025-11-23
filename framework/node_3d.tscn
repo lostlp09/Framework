@@ -38,7 +38,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_r3fl7"]
 material = SubResource("StandardMaterial3D_i5arm")
-text = "PASSWORD is Password
+text = "PASSWORD is password
 "
 
 [node name="Node3D" type="Node3D"]
@@ -84,10 +84,10 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 107.0
-offset_top = 428.0
-offset_right = 1366.0
-offset_bottom = 566.0
+offset_left = 487.0
+offset_top = 698.0
+offset_right = 1746.0
+offset_bottom = 836.0
 theme_override_font_sizes/font_size = 76
 text = "press -E to activate laptop"
 

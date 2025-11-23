@@ -1,7 +1,6 @@
 extends Label
 
-var timeuntilitsover = 22
-var goal =  1765839600
+var goal =   	1765207459
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://do7irm2r3s5nq"]
+[gd_scene load_steps=28 format=3 uid="uid://do7irm2r3s5nq"]
 
 [ext_resource type="Script" uid="uid://chi8ohvvgrswv" path="res://passwordscreen.gd" id="1_y7yf3"]
 [ext_resource type="Texture2D" uid="uid://yx2y5rfhbro" path="res://windows.webp" id="2_adb1b"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://b4waymqcrv3e2" path="res://boutube.gd" id="15_54skk"]
 [ext_resource type="Script" uid="uid://d2dj1g6vh64tq" path="res://timeuntil.gd" id="17_43msb"]
 [ext_resource type="Script" uid="uid://dlfpsxtwjkphv" path="res://label.gd" id="17_pcxfa"]
+[ext_resource type="Texture2D" uid="uid://xuc2ojka0gy0" path="res://youtubethumbnails/siege.png" id="18_0cq2i"]
 
 [sub_resource type="Theme" id="Theme_40wwj"]
 
@@ -48,10 +49,12 @@ bg_color = Color(1, 0, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8tiu"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43msb"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="passwordscreen" type="Panel" parent="."]
-visible = false
 offset_left = 513.0
 offset_top = 299.0
 offset_right = 1330.0
@@ -102,6 +105,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="linux" type="Node2D" parent="."]
+visible = false
 
 [node name="Homescreen" type="Sprite2D" parent="linux"]
 z_index = -1
@@ -116,24 +120,24 @@ anchor_top = -0.0249979
 anchor_right = 0.000112487
 anchor_bottom = -0.000419813
 offset_left = -2061.46
-offset_top = 1076.14
-offset_right = 2044.54
-offset_bottom = 1291.14
+offset_top = 1054.83
+offset_right = 2078.54
+offset_bottom = 1269.83
 theme_override_styles/panel = SubResource("StyleBoxFlat_adb1b")
 
 [node name="TextureButton" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -242.78
-offset_top = 1010.08
+offset_top = 984.11
 offset_right = 969.22
-offset_bottom = 3017.07
+offset_bottom = 2991.1
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("4_r8p37")
 
 [node name="TextureButton2" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -2010.39
-offset_top = -1206.55
-offset_right = -798.385
-offset_bottom = 800.448
+offset_top = -1128.46
+offset_right = -798.386
+offset_bottom = 878.534
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("4_r8p37")
 
@@ -148,9 +152,9 @@ text = "Game Store"
 
 [node name="TextureButton3" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -1680.29
-offset_top = -1206.55
-offset_right = -468.29
-offset_bottom = 800.448
+offset_top = -1128.46
+offset_right = -468.291
+offset_bottom = 878.534
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("5_vtxfk")
 script = ExtResource("5_a1o2t")
@@ -166,9 +170,9 @@ text = "Bunny(sociel Media)"
 
 [node name="TextureButton5" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -1362.98
-offset_top = -1211.59
+offset_top = -1133.5
 offset_right = -150.975
-offset_bottom = 795.411
+offset_bottom = 873.497
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("6_7qutr")
 script = ExtResource("7_0cq2i")
@@ -185,28 +189,18 @@ text = "  Boutube
 
 [node name="TextureButton6" type="TextureButton" parent="linux/Homescreen"]
 offset_left = 102.223
-offset_top = 1005.04
+offset_top = 984.11
 offset_right = 1314.23
-offset_bottom = 3012.04
+offset_bottom = 2991.11
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("6_7qutr")
 script = ExtResource("7_0cq2i")
 
-[node name="Label" type="Label" parent="linux/Homescreen/TextureButton6"]
-layout_mode = 0
-offset_left = 87.3701
-offset_top = 1286.24
-offset_right = 1941.37
-offset_bottom = 1811.24
-theme_override_font_sizes/font_size = 191
-text = "  Boutube
-"
-
 [node name="TextureButton4" type="TextureButton" parent="linux/Homescreen"]
 offset_left = -613.339
-offset_top = 1005.04
+offset_top = 984.11
 offset_right = 598.661
-offset_bottom = 3012.03
+offset_bottom = 2991.1
 scale = Vector2(0.195, 0.235)
 texture_normal = ExtResource("5_vtxfk")
 script = ExtResource("5_a1o2t")
@@ -359,7 +353,7 @@ script = ExtResource("15_54skk")
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="linux/boutube/boutube/VBoxContainer"]
-custom_minimum_size = Vector2(1500, 3000)
+custom_minimum_size = Vector2(1500, 1000)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f8tiu")
 
@@ -369,25 +363,43 @@ offset_top = -16.0
 offset_right = 936.0
 offset_bottom = 8.0
 
-[node name="countdown" type="Panel" parent="linux"]
-offset_left = 1504.0
-offset_right = 1920.0
-offset_bottom = 216.0
+[node name="timerapp" type="Node2D" parent="linux"]
+position = Vector2(1746, 6)
+script = ExtResource("7_8b768")
 
-[node name="Label" type="Label" parent="linux/countdown"]
-layout_mode = 0
-offset_left = 48.0
-offset_right = 392.0
-offset_bottom = 179.0
-text = "Time remaing until Siege is over
+[node name="countdown" type="Panel" parent="linux/timerapp"]
+offset_left = -158.0
+offset_top = 8.0
+offset_right = 274.0
+offset_bottom = 312.0
+scale = Vector2(0.749029, 0.6)
+theme_override_styles/panel = SubResource("StyleBoxFlat_43msb")
+
+[node name="Label" type="Label" parent="linux/timerapp/countdown"]
+offset_left = 16.0
+offset_top = 232.0
+offset_right = 416.0
+offset_bottom = 502.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "emtpy
 
 
 
-
-
-00:00:00"
+"
 horizontal_alignment = 1
 script = ExtResource("17_43msb")
+
+[node name="Siege" type="Sprite2D" parent="linux/timerapp/countdown"]
+position = Vector2(224, 96)
+scale = Vector2(0.189978, 0.155928)
+texture = ExtResource("18_0cq2i")
+
+[node name="Button" type="Button" parent="linux/timerapp"]
+offset_left = -159.0
+offset_top = -10.0
+offset_right = 167.0
+offset_bottom = 8.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1744.0
@@ -396,6 +408,14 @@ offset_right = 1912.0
 offset_bottom = 1048.0
 script = ExtResource("17_pcxfa")
 
+[node name="Button2" type="Button" parent="."]
+offset_left = -6.0
+offset_top = -1.0
+offset_right = 109.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 51
+text = "exit"
+
 [connection signal="text_submitted" from="passwordscreen/LineEdit" to="passwordscreen" method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="linux/Homescreen/TextureButton" to="linux/Node2D2/Gamestore" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="linux/Homescreen/TextureButton2" to="linux/Node2D2/Gamestore" method="_on_texture_button_pressed"]
@@ -403,3 +423,4 @@ script = ExtResource("17_pcxfa")
 [connection signal="mouse_exited" from="linux/Node2D2/Button" to="linux/bunny" method="_on_button_mouse_exited"]
 [connection signal="mouse_entered" from="linux/bunny/Button" to="linux/bunny" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="linux/bunny/Button" to="linux/bunny" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button2" to="passwordscreen" method="_on_button_2_pressed"]
